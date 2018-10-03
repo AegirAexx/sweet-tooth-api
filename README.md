@@ -6,14 +6,14 @@ Sweet Tooth wants their clients to be able to fetch information about their cand
 
 Below are the endpoints the web service should provide to the clients:
 
-+ **(10%)** /api/candies - Gets all candies within the application.
-+ **(10%)** /api/candies - Creates a new candy (**NO MODEL VALIDATION**) and should return the newly created model along with a proper status code.
-+ **(10%)** /api/candies/{id} - Gets a candy with a certain id.
-+ **(10%)** /api/offers - Gets all offers within the application and the output should include the nested candies within the offer object as seen in the *Model Structure* section.
-+ **(10%)** /api/pinatas - Gets all pinatas within the application - should contain all properties excluding **_surprise_**.
-+ **(10%)** /api/pinatas/{id} - Gets a pinata with a certain id.
-+ **(20%)** /api/pinatas - Create a new pinata (**NO MODEL VALIDATION**) and should return the newly created model along with a proper status code.
-+ **(30%)** /api/pinatas/{id}/hit - Hits a certain pinata until its hit limit has been reached. If the hit was a success it should return a status code of 204 (No Content), unless it was the final blow than it should return a status code of 200 (OK) along with the surprise property from the pinata as a string. If the hit limit has been reached the endpoint should return a status code 423 (Locked).
++ **(10%)** [ /api/candies ] - Gets all candies within the application.
++ **(10%)** [ /api/candies ] - Creates a new candy (**NO MODEL VALIDATION**) and should return the newly created model along with a proper status code.
++ **(10%)** [ /api/candies/{id} ] - Gets a candy with a certain id.
++ **(10%)** [ /api/offers ] - Gets all offers within the application and the output should include the nested candies within the offer object as seen in the *Model Structure* section.
++ **(10%)** [ /api/pinatas ] - Gets all pinatas within the application - should contain all properties excluding **_surprise_**.
++ **(10%)** [ /api/pinatas/{id} ] - Gets a pinata with a certain id.
++ **(20%)** [ /api/pinatas ] - Create a new pinata (**NO MODEL VALIDATION**) and should return the newly created model along with a proper status code.
++ **(30%)** [ /api/pinatas/{id}/hit ] - Hits a certain pinata until its hit limit has been reached. If the hit was a success it should return a status code of **_204 (No Content)_**, unless it was the final blow than it should return a status code of **_200 (OK)_** along with the surprise property from the pinata as a string. If the hit limit has been reached the endpoint should return a status code **_423 (Locked)_**.
 
 ## Requirements
 The solution should be implemented using **Express** in **NodeJS** with **JavaScript** as the programming language. It is probably a good idea to break up the code into separate files, but that is not necessary and all code can reside within **index.js**.
@@ -24,7 +24,8 @@ The data is called **data.json** and can be downloaded from [**Canvas**](https:/
 ## Model structure
 The model structure seen below is how it should be served to the client. This structure does not necessarily look like it does within **data.json**.
 
-### CANDY
+#### CANDY
+
 ```JSON
 {
     "id": 1,
@@ -33,7 +34,8 @@ The model structure seen below is how it should be served to the client. This st
 }
 ```
 
-### OFFER
+#### OFFER
+
 ```JSON
 {
     "id": 1,
@@ -53,7 +55,8 @@ The model structure seen below is how it should be served to the client. This st
 }
 ```
 
-### PINATA
+#### PINATA
+
 ```JSON
 {
     "id": 1,
