@@ -2,13 +2,12 @@ const express = require('express');
 const app = express();
 const router = express.Router();
 const port = 3000;
-// const sweetToothService = require('./services/sweetToothService');
+const candyService = require('./services/candyService');
 const bodyParser = require('body-parser');
 
 // Get all candy
 router.get('/candies', (req, res) => {
-    const strObj = { "id": 1, "name": "All the candies!"};
-    return res.json(strObj);
+    return res.json(candyService.getAllCandy());
 });
 
 // Create new candy
@@ -20,10 +19,10 @@ router.post('/candies', (req, res) => {
 
 // Get a candy with a certain ID
 router.get('/candies/:id', (req, res) => {
-    // const { id } = req.params;
-    // const ufo = ufoService.getUfoById(id);
-    // if (ufo === -1) { return res.status(404).send(); }
-    // return res.json(ufo);
+    const { id } = req.params;
+    const candy = candyService.getCandyById(id);
+    if (candy === -1) { return res.status(404).send(); }
+    return res.json(candy);
 });
 
 // Get all offers
