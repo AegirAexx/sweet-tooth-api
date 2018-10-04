@@ -5,7 +5,9 @@ const pinatas = require('../data/collections').pinatas;
 const candyService = () => {
 
     const getAllCandy = () => candies;
-    const getAllOffers = () => offers;
+    const getAllOffers = () => {
+        return offers;
+    }
 
     const getAllPinatas = () => {
         const noSurprise = [];

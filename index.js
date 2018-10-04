@@ -54,5 +54,5 @@ app.use(bodyParser.json());
 app.use('/api', router);
 
 app.listen(port, () => {
-    console.log(`Listening on port ${port}, head over to Postman and send me some requests...`)
+    console.log(`Listening on port ${port}...`)
 });
