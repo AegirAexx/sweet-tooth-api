@@ -11,8 +11,9 @@ router.get('/candies', (req, res) => {
 
 router.post('/candies', (req, res) => {
     const { body } = req;
-    candyService.createCandy(body);
-    return res.status(201).send();
+    const candy = candyService.createCandy(body);
+    if(candy == -1) { return res.status(412).send("Precondition Failed"); }
+    return res.status(201).json(candy);
 });
 
 router.get('/candies/:id', (req, res) => {
