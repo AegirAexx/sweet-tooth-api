@@ -50,8 +50,9 @@ router.get('/pinatas/:id/hit', (req, res) => {
 });
 
 app.use(bodyParser.json());
+
 app.use('/api', router);
 
 app.listen(port, () => {
-    console.log(`Listening on port ${port}...`)
+    console.log(`Listening on port ${port}, head over to Postman and send me some requests...`)
 });
