@@ -20,12 +20,28 @@ const candyService = () => {
         return pinata[0];
     }
 
+    const createCandy = (candy) => {
+        let highestId = 0;
+        candies.forEach(c => { if (c.id > highestId) { highestId = c.id; }});
+        candy.id = highestId + 1;
+        candies.push(candy);
+    }
+
+    const createPinata = (pinata) => {
+        let highestId = 0;
+        pinata.forEach(c => { if (p.id > highestId) { highestId = p.id; }});
+        pinata.id = highestId + 1;
+        pinatas.push(pinata);
+    }
+
     return {
         getAllCandy,
         getAllOffers,
         getAllPinatas,
         getPinataById,
-        getCandyById
+        getCandyById,
+        createCandy,
+        createPinata
     };
 }
 
