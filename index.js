@@ -12,7 +12,7 @@ router.get('/candies', (req, res) => {
 router.post('/candies', (req, res) => {
     const { body } = req;
     const candy = candyService.createCandy(body);
-    if(candy == -1) { return res.status(412).send("Precondition Failed"); }
+    if(candy === -1) { return res.status(412).send("Precondition Failed"); }
     return res.status(201).json(candy);
 });
 
@@ -40,8 +40,9 @@ router.get('/pinatas/:id', (req, res) => {
 
 router.post('/pinata', (req, res) => {
     const { body } = req;
-    candyService.createPinata(body);
-    return res.status(201).send();
+    const pinata = candyService.createPinata(body);
+    if(pinata === -1) { return res.status(412).send("Precondition Failed"); }
+    return res.status(201).json(pinata);
 });
 
 router.get('/pinatas/:id/hit', (req, res) => {
