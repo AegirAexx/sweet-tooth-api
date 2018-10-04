@@ -6,7 +6,19 @@ const candyService = () => {
 
     const getAllCandy = () => candies;
     const getAllOffers = () => offers;
-    const getAllPinatas = () => pinatas;
+
+    const getAllPinatas = () => {
+        const noSurprise = [];
+        pinatas.forEach(function(pinata){
+            const tempPinata = {};
+            tempPinata.id = pinata.id;
+            tempPinata.name = pinata.name;
+            tempPinata.maximumHits = pinata.maximumHits;
+            tempPinata.currentHits = pinata.currentHits;
+            noSurprise.push(tempPinata);
+        });
+        return noSurprise;
+    }
 
     const getCandyById = (id) => {
         const candy = candies.filter(c => c.id == id);
