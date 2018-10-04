@@ -27,22 +27,20 @@ router.get('/candies/:id', (req, res) => {
 
 // Get all offers
 router.get('/offers', (req, res) => {
-    // const strObj = { "id": 1, "name": "All the candies!"};
-    // return res.json(strObj);
+    return res.json(candyService.getAllOffers());
 });
 
 // Get all pinatas
 router.get('/pinatas', (req, res) => {
-    // const strObj = { "id": 1, "name": "All the candies!"};
-    // return res.json(strObj);
+    return res.json(candyService.getAllPinatas());
 });
 
 // Get a pinata with a certain ID
 router.get('/pinatas/:id', (req, res) => {
-    // const { id } = req.params;
-    // const ufo = ufoService.getUfoById(id);
-    // if (ufo === -1) { return res.status(404).send(); }
-    // return res.json(ufo);
+    const { id } = req.params;
+    const pinata = candyService.getPinataById(id);
+    if (pinata === -1) { return res.status(404).send(); }
+    return res.json(pinata);
 });
 
 // Create a pinata
