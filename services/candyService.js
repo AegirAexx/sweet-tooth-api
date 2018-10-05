@@ -1,14 +1,18 @@
+// Small Assignment 3 | SC-T-514-VEFT @ Reykjavik University
+// Aegir Tomasson @aegir15
+
 const candies = require('../data/collections').candies;
 const offers = require('../data/collections').offers;
 const pinatas = require('../data/collections').pinatas;
 
+// The service/logic layer - Candy Services!
 const candyService = () => {
 
     const getAllCandy = () => candies;
 
     const getAllOffers = () => {
-        const candyIndexes = new Array();
-        const offerValues = new Array();
+        let candyIndexes = new Array();
+        let offerValues = new Array();
         const expandedOffers = new Array();
         let tempObject = new Object();
         offers.forEach(i => { candyIndexes.push(i.candies.toString()); });
@@ -26,6 +30,8 @@ const candyService = () => {
             expandedOffers.push(tempObject);
             tempObject = null;
         }
+        candyIndexes = null;
+        offerValues = null;
         return expandedOffers;
     }
 
@@ -86,6 +92,14 @@ const candyService = () => {
         return arrangedPinata;
     }
 
+    const hitPinataById = (id) => {
+        const pinata = getPinataById(id);
+        if(pinata.currentHits >= pinata.maximumHits) { return -1; }
+        pinata.currentHits += 1;
+        if(pinata.currentHits == pinata.maximumHits) { return 1; }
+        return 0;
+    }
+
     return {
         getAllCandy,
         getAllOffers,
@@ -93,7 +107,8 @@ const candyService = () => {
         getPinataById,
         getCandyById,
         createCandy,
-        createPinata
+        createPinata,
+        hitPinataById
     };
 }
 

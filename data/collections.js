@@ -1,3 +1,5 @@
+// Small Assignment 3 | SC-T-514-VEFT @ Reykjavik University
+// Aegir Tomasson @aegir15
 
 const candies = [
     {

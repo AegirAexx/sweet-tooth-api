@@ -4,8 +4,6 @@
   "description": "Small assignment 3 for SC-T-514-VEFT @ Reykjavik University",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "watch": "jest --watch-all",
     "start": "node ./index.js",
     "clean": "rm -rf node_modules"
   },
@@ -15,7 +13,11 @@
   },
   "keywords": [
     "Node.js",
-    "Express"
+    "Express",
+    "API",
+    "Webservices",
+    "SC-T-514-VEFT",
+    "Reykjavik-University"
   ],
   "author": "Aegir Tomasson",
   "license": "ISC",
@@ -26,8 +28,5 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3"
-  },
-  "devDependencies": {
-    "jest": "^23.6.0"
   }
 }

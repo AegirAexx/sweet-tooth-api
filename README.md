@@ -67,4 +67,4 @@ The model structure seen below is how it should be served to the client. This st
 ```
 
 ## Submission
-A single compressed file **(\*.zip, \*.rar)** containing all your code should be submitted to **Canvas**. Don’t forget to delete the **node_modules/** folder! Also don’t forget to comment the names of each group member (*excluding the one who submitted*).
+A single compressed file **(\*.zip, \*.rar)** containing all your code should be submitted to [**Canvas**](https://canvas.ru.is/). Don’t forget to delete the **node_modules/** folder! Also don’t forget to comment the names of each group member (*excluding the one who submitted*).
